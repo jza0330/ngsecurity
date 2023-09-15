@@ -23,7 +23,7 @@
 ///
 /// RegExp Source: Closure sanitization library.
 final RegExp _safeUrlPattern = RegExp(
-    '^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|\$))',
+    '^(?:(?:https?|blob|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|\$))',
     caseSensitive: false);
 
 final RegExp _dataUrlPattern = RegExp(
