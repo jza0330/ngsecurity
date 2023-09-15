@@ -23,7 +23,7 @@
 ///
 /// RegExp Source: Closure sanitization library.
 final RegExp _safeUrlPattern = RegExp(
-    '^(?:(?:https?|blob|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|\$))',
+    '^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|\$))',
     caseSensitive: false);
 
 final RegExp _dataUrlPattern = RegExp(
@@ -34,7 +34,8 @@ final RegExp _dataUrlPattern = RegExp(
 
 String internalSanitizeUrl(String url) {
   if (url.isEmpty) return url;
-  return (_safeUrlPattern.hasMatch(url) || _dataUrlPattern.hasMatch(url))
-      ? url
-      : 'unsafe:$url';
+  return url;
+  /// return (_safeUrlPattern.hasMatch(url) || _dataUrlPattern.hasMatch(url))
+  ///      ? url
+  ///    : 'unsafe:$url';
 }
